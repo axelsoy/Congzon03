@@ -1,0 +1,20 @@
+class Person:
+    def __init__(self, name, age):
+        self.__name = name  # Private attribute
+        self.__age = age    # Private attribute
+   
+    def get_name(self):
+        return self.__name
+   
+    def set_name(self, name):
+        self.__name = name
+
+# Creating an object of Person class
+p = Person("Axel", 30)
+
+# Accessing name through getter method
+print(p.get_name())  
+
+# Modifying name through setter method
+p.set_name("Joyce")
+print(p.get_name())  
