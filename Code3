@@ -1,0 +1,33 @@
+class BankAccount:
+    def __init__(self, account_holder, balance):
+        self.__account_holder = account_holder  # Private attribute
+        self.__balance = balance  # Private attribute
+   
+    @property
+    def balance(self):
+        return self.__balance
+   
+    def deposit(self, amount):
+
+
+        if amount > 0:
+            self.__balance += amount
+        else:
+            print("Deposit amount must be positive.")
+   
+    def withdraw(self, amount):
+        if 0 < amount <= self.__balance:
+            self.__balance -= amount
+        else:
+            print("Insufficient funds or invalid amount.")
+# Creating a BankAccount object
+account = BankAccount("Joyce", 500)
+
+# Accessing balance via property method
+print(account.balance)  # Output: 500
+
+# Depositing and withdrawing money
+account.deposit(200)
+account.withdraw(150)
+
+print(account.balance)  # Output: 550
