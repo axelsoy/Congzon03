@@ -1,0 +1,25 @@
+class Car:
+    def __init__(self, make, speed):
+        self._make = make  # Protected attribute
+        self._speed = speed  # Protected attribute
+   
+    @property
+    def speed(self):
+        return self._speed
+   
+    @speed.setter
+    def speed(self, value):
+        if value > 0:
+            self._speed = value
+        else:
+            print("Speed cannot be negative.")
+
+# Creating an object of Car class
+car = Car("Toyota", 60)
+
+# Accessing speed using the property method
+print(car.speed)  # Output: 60
+
+# Trying to set an invalid speed
+car.speed = -10  # Output: Speed cannot be negative.
+print(car.speed)  # Output: 60
